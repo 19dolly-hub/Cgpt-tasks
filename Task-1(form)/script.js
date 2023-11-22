@@ -10,6 +10,16 @@ let isValidPw = false;
 const confirmField = document.getElementById("password-match");
 let pwMatched = false;
 
+const togglePw = document.querySelector("icon");
+
+togglePw.addEventListener("click", () => {
+    const type = confirmField.getAttribute("type") === "password" ? "text" : "password";
+    confirmField.setAttribute("type", type);
+
+    document.getElementById("i-o").classList.toggle("none");
+    document.getElementById("i-slash").classList.toggle("none");
+});
+
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", e => {

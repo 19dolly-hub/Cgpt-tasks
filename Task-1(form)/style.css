@@ -46,16 +46,17 @@ main {
 
 .form {
     height: 88%;
-    padding: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 2rem;
     overflow: auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.7rem;
     color: gray;
+    height: 100%;
 }
 
 form label {
@@ -67,6 +68,8 @@ form input {
     border: none;
     border-bottom: darkgray 1.9px solid;
     padding: 5px 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
     font-family: system-ui;
 }
 
@@ -93,6 +96,21 @@ form input::placeholder {
     color: tomato;
 }
 
+.relative {
+    position: relative;
+}
+
+icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.none {
+    display: none;
+}
+
 form input[type="submit"] {
     cursor: pointer;
     width: 28%;
@@ -116,6 +134,9 @@ form input[type="submit"] {
 @media (max-width: 600px) {
     .container {
         width: 90%;
-        height: 70%;
+    }
+
+    .form {
+        padding: 1rem;
     }
 }
