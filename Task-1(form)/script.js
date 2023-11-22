@@ -12,11 +12,15 @@ let pwMatched = false;
 
 const submit = document.getElementById("submit");
 
+submit.addEventListener("click", e => {
+    enableSubmit(e);
+});
+
 nameField.addEventListener("change", e => {
     const input = e.target.value;
-    const lettersExp = new RegExp("^[a-zA-Z]+$");
+    const lettersExp = new RegExp("^[a-zA-Z]{3,}$");
 
-    if(input.length >= 3 && lettersExp.test(input)) {
+    if(lettersExp.test(input)) {
         isValidName = true;
         validState(nameField);
     }
@@ -28,9 +32,7 @@ nameField.addEventListener("change", e => {
 
 emailField.addEventListener("change", e => {
     const input = e.target.value;
-    // const emailExp = new RegExp("^[a-zA-Z0-9_!#$%&'*+\/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", "gm");
-    // const emailExp = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");   
-    const emailExp = new RegExp("^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-z]+$", "gm");
+    const emailExp = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");   
 
     if(emailExp.test(input)) {
         isValidEmail = true;
@@ -72,7 +74,6 @@ function validState(field) {
     field.classList.remove("invalid");
     field.classList.add("valid");
     field.nextElementSibling.textContent = "";
-    enableSubmit();
 }
 
 function invalidState(field) {
@@ -81,8 +82,28 @@ function invalidState(field) {
     field.nextElementSibling.textContent = `Invalid ${field.id}`;
 }
 
-function enableSubmit() {
+function enableSubmit(e) {
     let allFieldsValid = isValidName && isValidEmail && isValidPw && pwMatched;
-    if (allFieldsValid) submit.removeAttribute("disabled")
-    else return;
+    let elseCase = !allFieldsValid && nameField.value !== "" && emailField.value !== "" && pwField.value !== "" && confirmField.value !== "";
+    if (allFieldsValid) {
+        e.preventDefault();
+        alert("Form submitted successfully!");
+        successSubmit({
+            username: nameField.value,
+            email: emailField.value,
+            password: pwField.value
+        });
+        // return;
+    }
+    else if (elseCase) {
+        e.preventDefault();
+        alert("Invalid Details");
+    }
+}
+
+function successSubmit(dataObject) {
+    console.log(dataObject);
+    document.querySelector("main").innerHTML = 
+    `<h1 style="color: white; text-transform: uppercase;">Thankyou! Data is printed on the console.</h1>`
+    ;
 }

@@ -41,12 +41,14 @@ main {
 
 .head h2 {
     text-transform: uppercase;
+    font-size: 20px;
 }
 
 .form {
     height: 88%;
     padding: 1rem;
-    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    overflow: auto;
 }
 
 form {
@@ -65,7 +67,6 @@ form input {
     border: none;
     border-bottom: darkgray 1.9px solid;
     padding: 5px 0;
-    text-transform: capitalize;
     font-family: system-ui;
 }
 
@@ -74,11 +75,21 @@ form input::placeholder {
     color: darkgray;
 }
 
-form p {
-    line-height: 14px;
+.rule {
+    line-height: 15px;
+    font-size: 0.95rem;
+}
+
+.valid {
+    border-color: green;
+}
+
+.invalid {
+    border-color: tomato;
 }
 
 .error {
+    line-height: 15px;
     color: tomato;
 }
 
