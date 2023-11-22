@@ -1,16 +1,22 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-theme: rgb(0, 0, 53);
+    --font-theme: #ffff;
+    --layer: rgb(85, 0, 128);
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  scroll-behavior: smooth;
-  background-color: rgb(0, 0, 53);
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: var(--bg-theme);
 }
 
 main {
@@ -23,19 +29,20 @@ main {
 .container {
     width: 40%;
     height: 70%;
-    background-color: white;
+    background-color: var(--font-theme);
     padding: 0.7rem;
     padding-bottom: 0;
 }
 
+/* CONTAINER HEAD AREA */
 .head {
     height: 12%;
     width: calc(100% + 1.48rem + 1.48rem);
     transform: translate(-1.48rem);
-    background-color: rgb(85, 0, 128);
+    background-color: var(--layer);
     text-align: center;
     padding: 0.2rem 0;
-    color: white;
+    color: var(--font-theme);
     line-height: 24px;
 }
 
@@ -44,6 +51,7 @@ main {
     font-size: 20px;
 }
 
+/* CONTAINER FORM AREA */
 .form {
     height: 88%;
     padding: 2rem;
@@ -78,17 +86,17 @@ form input::placeholder {
     color: darkgray;
 }
 
-.rule {
-    line-height: 15px;
-    font-size: 0.95rem;
-}
-
 .valid {
     border-color: green;
 }
 
 .invalid {
     border-color: tomato;
+}
+
+.rule {
+    line-height: 15px;
+    font-size: 0.95rem;
 }
 
 .error {
@@ -114,22 +122,24 @@ icon {
 form input[type="submit"] {
     cursor: pointer;
     width: 28%;
-    background-color: rgb(85, 0, 128);
-    color: white;
+    background-color: var(--layer);
+    color: var(--font-theme);
     text-transform: uppercase;
     margin-left: 72%;
 }
 
+/* CONTAINER LEFT AREA */
 .any {
     height: 10%;
     width: calc(100% + 1.48rem);
     transform: translate(-0.7rem);
     text-align: center;
     background-color: rgb(0, 19, 124);
-    color: white;
+    color: var(--font-theme);
     padding: 0.7rem 0;
     text-transform: uppercase;
 }
+
 
 @media (max-width: 600px) {
     .container {
