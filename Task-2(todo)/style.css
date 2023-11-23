@@ -111,3 +111,59 @@ main {
   cursor: pointer;
   background-color: transparent;
 }
+
+
+
+.form-pop-up {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(244, 220, 250);
+  display: none;
+}
+
+.form-container {
+  width: 80%;
+  max-width: 500px;
+  min-height: 50vh;
+  max-height: 80vh;
+  margin: auto;
+  padding: 1.8rem 1rem;
+  background-color: white;
+  box-shadow: 0 1px 10px 0 #dadada;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-container input {
+  outline: none;
+  border: 1.5px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem 0.2rem;
+}
+
+.form-container label {
+  color: rgb(207, 0, 207);
+}
+
+.form-container button {
+  background-color: rgb(207, 0, 207);
+  border: none;
+  color: white;
+  padding: 0.5rem 0;
+  width: 75%;
+  max-width: 7.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0px 1px 5px 0px rgb(207, 0, 207);
+}
