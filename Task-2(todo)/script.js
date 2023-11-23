@@ -6,6 +6,19 @@ const taskField = document.getElementById("task");
 const deadlineF = document.getElementById("deadline");
 const form = document.getElementById("form");
 
+
+const open = document.getElementById("open-form");
+open.addEventListener("click", () => {
+  document.getElementById("form-window").classList.remove("none");
+  taskField.click();
+});
+
+document.getElementById("cancel")
+.addEventListener("click", () => {
+  document.getElementById("form-window").classList.add("none");
+});
+
+
 renderTasks(tasksArray);
 
 form.addEventListener("submit", (e) => {
