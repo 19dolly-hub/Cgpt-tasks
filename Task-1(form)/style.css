@@ -41,7 +41,7 @@ main {
     transform: translate(-1.48rem);
     background-color: var(--layer);
     text-align: center;
-    padding: 0.2rem 0;
+    padding: 0.4rem 0;
     color: var(--font-theme);
     line-height: 24px;
 }
@@ -49,6 +49,7 @@ main {
 .head h2 {
     text-transform: uppercase;
     font-size: 20px;
+    padding-top: 0.4rem;
 }
 
 /* CONTAINER FORM AREA */
