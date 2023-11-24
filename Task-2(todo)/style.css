@@ -42,11 +42,13 @@ main {
   position: relative;
 }
 
+/* DYNAMIC AREA CONTAINER */
 .content {
   overflow: auto;
   padding: 1rem 0 0.5rem;
 }
 
+/* MASTER BUTTON */
 .add-task {
   background-color: rgb(207, 0, 207);
   border: none;
@@ -77,19 +79,24 @@ svg {
 .all-tasks {
   text-align: center;
 }
+
 /* and the none class in the end */
 /* TILL HERE */
 
+
+/* TASK CONTAINER CREATED USING JS */
 .task {
   display: flex;
   align-items: center;
 }
 
+/* CHECKBOX DIV */
 .checkbox {
   width: 8%;
   cursor: pointer;
 }
 
+/* INPUTS DIV */
 .inputs {
   width: 70%;
   display: flex;
@@ -116,6 +123,7 @@ svg {
   border-radius: 5px;
 }
 
+/* CONTROLS DIV */
 .controls {
   display: flex;
   align-items: center;
@@ -130,8 +138,10 @@ svg {
   margin-right: 7px;
 }
 
+/* TILL HERE CREATED USING JS */
 
 
+/* FORM WINDOW */
 .form-pop-up {
   display: grid;
   place-items: center;
