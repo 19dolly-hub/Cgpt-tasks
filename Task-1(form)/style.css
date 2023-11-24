@@ -28,7 +28,6 @@ main {
 
 .container {
     width: 40%;
-    height: 70%;
     background-color: var(--font-theme);
     padding: 0.7rem;
     padding-bottom: 0;
@@ -141,6 +140,12 @@ form input[type="submit"] {
     text-transform: uppercase;
 }
 
+
+@media (max-width: 1000px) {
+    .container {
+        width: 70%;
+    }
+}
 
 @media (max-width: 600px) {
     .container {
