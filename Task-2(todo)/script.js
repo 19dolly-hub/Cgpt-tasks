@@ -8,9 +8,7 @@ const formWindow = document.getElementById("form-window");
 
 
 // INITIALIZE LOCAL STORAGE AND TASKS ARRAY
-let todosArr = localStorage.getItem("todos") || `[]`;
-let tasksArray = JSON.parse(todosArr);
-
+let tasksArray = JSON.parse(localStorage.getItem("todos")) || [];
 
 // INITIALIZE UI
 renderTasks(tasksArray);
@@ -35,9 +33,11 @@ cancelBtn.addEventListener("click", () => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const task = taskField.value;
-  const deadline = deadlineF.value;
-  createTodo(task, deadline);
+  const task = taskField.value.trim();
+  const deadline = deadlineF.value.trim();
+  if (task !== "" && deadline !== "") {
+    createTodo(task, deadline);
+  }
 
   cancelBtn.click();
 });
